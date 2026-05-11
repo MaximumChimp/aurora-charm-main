@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@font-face {
+  font-family: 'AuroraFont';
+  src: url('./assets/fonts/MeaCulpa-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  /* We changed 4s to 5s for a slower, more "Charming" feel */
+  --animate-slide-up-slight: slideUpSlight 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+
+  @keyframes slideUpSlight {
+    /* Start just 30% below (about 10-12 pixels) */
+    0%, 15% { 
+      transform: translateY(30%); 
+      opacity: 0; 
+    } 
+    /* Stay perfectly in the center for most of the time */
+    30%, 85% { 
+      transform: translateY(0); 
+      opacity: 1; 
+    } 
+    /* Exit slightly upward */
+    95%, 100% { 
+      transform: translateY(-30%); 
+      opacity: 0; 
+    }
+  }
+}
