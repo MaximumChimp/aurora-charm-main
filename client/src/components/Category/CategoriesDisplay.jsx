@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Woman from '../../assets/images/Woman.png';
+import Woman from '../../assets/images/woman.png';
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
-import { IoCartOutline } from "react-icons/io5";
-
+import { BiCartAdd } from "react-icons/bi";
 function CategoriesDisplay() {
     // Slider Logic
     const [sliderIndex, setSliderIndex] = useState(0);
@@ -205,7 +204,7 @@ function CategoriesDisplay() {
                                         <span className="text-[10px] font-semibold text-gray-400">₱</span>
                                         <span className="font-bold text-lg text-gray-900 leading-none">150</span>
                                     </div>
-                                    <button className="p-1.5 bg-black text-white rounded-full hover:bg-pink-500 transition-colors shadow-sm"><IoCartOutline className="text-sm" /></button>
+                                    <button className="p-1.5 bg-black text-white rounded-full hover:bg-pink-500 transition-colors shadow-sm"><BiCartAdd className="text-md" /></button>
                                 </div>
                             </div>
                         </div>
