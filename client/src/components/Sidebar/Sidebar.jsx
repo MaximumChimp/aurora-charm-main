@@ -10,7 +10,7 @@ function Sidebar({ isOpen, onClose }) {
         { name: "Just for you", path: "#" },
         { name: "New In", path: "#" },
         { name: "Sale", path: "#", isRed: true },
-        { name: "Women Clothing", path: "#" }
+        { name: "Premium Collection", path: "#" }
     ];
 
     // --- 1. RESET TO "ALL" ON CLOSE ---
@@ -57,7 +57,7 @@ function Sidebar({ isOpen, onClose }) {
                 <div className="flex items-center justify-end  mb-6 bg-white flex-shrink-0">
                     {/* X Button on the right */}
                     <IoMdClose 
-                        className="text-3xl cursor-pointer  text-white bg-black  hover:text-pink-500 transition-colors" 
+                        className="text-4xl cursor-pointer  text-white bg-black  hover:text-pink-500 transition-colors" 
                         onClick={onClose} 
                     />
                 </div>
