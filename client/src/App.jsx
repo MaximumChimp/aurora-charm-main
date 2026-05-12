@@ -1,7 +1,11 @@
+import Footer from "./components/Footer";
 import Index from "./components/Index";
 function App(){
   return(
-    <Index/>
+    <div>
+          <Index/>
+    <Footer/>
+    </div>
   );
 }
 export default App;
