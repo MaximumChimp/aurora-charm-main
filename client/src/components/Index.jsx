@@ -4,12 +4,17 @@ import { HiOutlineUser } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 import CategoriesDisplay from "./Category/CategoriesDisplay";
 import Sidebar from "./Sidebar/Sidebar";
+import SearchMobile from "./SearchMobile/SearchMobile";
+import Cart from "./Cart/Cart";
+import WishList from "./WishList/WishList";
 function Index() {
     const [msgIndex, setMsgIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [isCartOpen,setIsCartOpen] = useState(false);
+    const [isWishList,setIsWishList] = useState(false)
     const Announcement = [
         "Delivery Every Weekends!",
         "New Collection Coming Soon!",
@@ -49,10 +54,10 @@ function Index() {
     return (
         /* CRITICAL: Ensure the root div doesn't have overflow-hidden that breaks sticky */
         <div className="relative min-h-screen w-full bg-white">
-        <Sidebar 
-                isOpen={isSidebarOpen} 
-                onClose={() => setIsSidebarOpen(false)} 
-            />
+            <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+            <SearchMobile isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+            <Cart isOpen={isCartOpen} onClose={()=>setIsCartOpen(false)}/>
+            <WishList isOpen={isWishList} onClose={()=>setIsWishList(false)}/>
             {/* --- HEADER SECTION --- */}
             {/* Added 'w-full' and made sure it's a direct child of the scrolling container */}
             <header className={`sticky top-0 z-[100] w-full transition-transform duration-500 ease-in-out shadow-sm ${
@@ -97,10 +102,10 @@ function Index() {
                             {/* Right: Icons */}
                             <div className="justify-self-end flex items-center gap-6">
                                 <div className="relative cursor-pointer group">
-                                    <IoIosHeartEmpty className="text-2xl text-white group-hover:scale-110 transition-transform" />
+                                    <IoIosHeartEmpty onClick={()=>setIsWishList(true)} className="text-2xl text-white group-hover:scale-110 transition-transform" />
                                     <span className="absolute -top-1 -right-1 bg-pink-500 text-[10px] text-white w-4 h-4 flex items-center justify-center rounded-full">0</span>
                                 </div>
-                                <IoCartOutline className="text-2xl text-white cursor-pointer hover:scale-110 transition-transform" />
+                                <IoCartOutline onClick={()=>setIsCartOpen(true)} className="text-2xl text-white cursor-pointer hover:scale-110 transition-transform" />
                                 <HiOutlineUser className="text-2xl text-white cursor-pointer hover:scale-110 transition-transform" />
                             </div>
                         </div>
@@ -153,12 +158,12 @@ function Index() {
                             />
                             <h1 className="text-3xl text-white font-['AuroraFont']">Aurora Charm</h1>
                             <div className="flex items-center gap-4">
-                                <IoIosSearch className="text-white text-2xl" />
+                                <IoIosSearch onClick={()=> setIsSearchOpen(true)} className="text-white text-2xl" />
                                 <div className="relative cursor-pointer group">
-                                    <IoIosHeartEmpty className="text-2xl text-white group-hover:scale-110 transition-transform" />
+                                    <IoIosHeartEmpty onClick={()=>setIsWishList(true)} className="text-2xl text-white group-hover:scale-110 transition-transform" />
                                     <span className="absolute -top-1 -right-1 bg-pink-500 text-[10px] text-white w-4 h-4 flex items-center justify-center rounded-full">0</span>
                                 </div>
-                                <IoCartOutline className="text-2xl text-white" />
+                                <IoCartOutline onClick={()=>setIsCartOpen(true)} className="text-2xl text-white" />
                             </div>
                         </div>
                         

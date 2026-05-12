@@ -94,7 +94,7 @@ function CategoriesDisplay() {
     {/* --- Right Column of Links --- */}
     <div className="flex flex-col space-y-4 md:order-3 md:pl-4 lg:pl-8">
         {[
-            { title: "Branded", sub: "Premium Selection" },
+            { title: "Premium", sub: "Premium Selection" },
             { title: "Collections", sub: "Curated Styles" }
         ].map((link, i) => (
             <div key={i} className="group cursor-pointer flex flex-col items-center md:items-start w-full">
@@ -213,7 +213,7 @@ function CategoriesDisplay() {
 
                 {visibleCount < allItems.length && (
                     <div className="flex justify-center pt-4">
-                        <button onClick={showMore} className="flex items-center gap-2 px-8 py-2.5 font-bold text-black border-2 border-black rounded-sm hover:bg-black hover:text-white transition-colors duration-200 text-sm">
+                        <button onClick={showMore} className="flex items-center gap-2 px-8 py-2.5  text-black border-1 border-black rounded-sm hover:bg-black hover:text-white transition-colors duration-200 text-sm">
                             <span>VIEW MORE</span>
                             <IoIosArrowDown />
                         </button>

@@ -43,7 +43,7 @@ function Footer() {
                     <div className="space-y-10 md:pl-12">
                         {/* Find Us Section - Now Left Aligned on Mobile */}
                        <div className="space-y-3 text-left w-full">
-    <h2 className="text-md font-bold text-gray-800 tracking-tight">FIND US ON</h2>
+    <h2 className="text-md font-bold text-gray-800 tracking-tight">FOLLOW US ON</h2>
     
     {/* 1. Changed flex-col to flex-row as default
       2. Added flex-nowrap to prevent dropping to the next line
@@ -52,18 +52,16 @@ function Footer() {
     */}
                 <div className="flex flex-row flex-nowrap justify-start gap-2 w-full">
                     
-                    <div className="flex-shrink-0">
+                    {/* <div className="flex-shrink-0">
                         <a className="flex items-center gap-2 bg-white px-2 py-2 sm:px-4 rounded-xl border border-gray-100">
                             <FaFacebook className="text-blue-600 text-lg" />
-                            {/* 'text-[10px]' for tiny screens, 'text-sm' for tablets/desktop */}
                             <span className="text-[15px] sm:text-sm font-medium text-gray-700 whitespace-nowrap tracking-tight">Aurora Charm</span>
                         </a>
-                    </div>
+                    </div> */}
 
                     <div className="flex-shrink-0">
                         <a className="flex items-center gap-2 bg-white px-2 py-2 sm:px-4 rounded-xl border border-gray-100">
                             <FaFacebook className="text-blue-600 text-lg" />
-                            <span className="text-[15px] sm:text-sm font-medium text-gray-700 whitespace-nowrap tracking-tight">Clarice Angel Sanchez</span>
                         </a>
                     </div>
                     
@@ -93,7 +91,7 @@ function Footer() {
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="text-[9px] uppercase text-gray-400 font-bold leading-none mb-1">Email Us</span>
-                                        <span className="text-sm font-medium tracking-tight">clariceangel916@gmail.com</span>
+                                        <span className="text-sm font-medium tracking-tight">auroracharm@gmail.com</span>
                                     </div>
                                 </div>
                             </div>
