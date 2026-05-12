@@ -18,7 +18,6 @@ function Index() {
     const Announcement = [
         "Delivery Every Weekends!",
         "New Collection Coming Soon!",
-        "Visit Our Facebook Page",
         "Check out Super Deals for ₱99 items!",
         "Payment First Basis"
     ];

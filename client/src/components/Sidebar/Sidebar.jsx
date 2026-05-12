@@ -6,18 +6,29 @@ function Sidebar({ isOpen, onClose }) {
     const [selectedTab, setSelectedTab] = useState("All");
     const categories = ["All", "Women", "Kids"];
     
-    const allSubLinks = [
-        { name: "Just for you", path: "#" },
-        { name: "New In", path: "#" },
-        { name: "Sale", path: "#", isRed: true },
-        { name: "Premium Collection", path: "#" }
-    ];
+    // Define the content for each tab
+    const menuData = {
+        All: [
+            { name: "Just for you", path: "#" },
+            { name: "New In", path: "#" },
+            { name: "Super Deals", path: "#", isRed: true },
+            { name: "Premium Collection", path: "#" }
+        ],
+        Women: [
+            { name: "Blouses", path: "#" },
+            { name: "T-shirts", path: "#" },
+            { name: "Pants", path: "#" },
+            { name: "Shorts", path: "#" }
+        ],
+        Kids: [
+            { name: "T-Shirts", path: "#" },
+            { name: "Shorts", path: "#" },
+            { name: "Blouse", path: "#" }
+        ]
+    };
 
-    // --- 1. RESET TO "ALL" ON CLOSE ---
     useEffect(() => {
         if (!isOpen) {
-            // Delay the reset slightly so the user doesn't see the content 
-            // jump while the sidebar is still sliding away
             const timer = setTimeout(() => {
                 setSelectedTab("All");
             }, 500); 
@@ -25,7 +36,6 @@ function Sidebar({ isOpen, onClose }) {
         }
     }, [isOpen]);
 
-    // --- 2. LOCK BODY SCROLL ---
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
@@ -54,10 +64,9 @@ function Sidebar({ isOpen, onClose }) {
                     isOpen ? "translate-x-0" : "-translate-x-full"
                 }`}
             >
-                <div className="flex items-center justify-end  mb-6 bg-white flex-shrink-0">
-                    {/* X Button on the right */}
+                <div className="flex items-center justify-end mb-6 bg-white flex-shrink-0">
                     <IoMdClose 
-                        className="text-4xl cursor-pointer  text-white bg-black  hover:text-pink-500 transition-colors" 
+                        className="text-4xl cursor-pointer text-white bg-black hover:text-pink-500 transition-colors" 
                         onClick={onClose} 
                     />
                 </div>
@@ -82,11 +91,11 @@ function Sidebar({ isOpen, onClose }) {
                         ))}
                     </div>
 
-                    {/* Menu Items */}
+                    {/* Dynamic Menu Items Based on selectedTab */}
                     <div className="mt-8 flex flex-col space-y-4 flex-1 overflow-y-auto no-scrollbar pb-10">
-                        {selectedTab === "All" && allSubLinks.map((link) => (
+                        {menuData[selectedTab].map((link, index) => (
                             <a 
-                                key={link.name}
+                                key={index}
                                 href={link.path} 
                                 className="flex items-center gap-5 group py-1"
                                 onClick={onClose}
@@ -95,7 +104,7 @@ function Sidebar({ isOpen, onClose }) {
                                     <img 
                                         src={Woman} 
                                         alt={link.name} 
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" 
+                                        className="w-full h-full object-cover transition-all duration-300" 
                                     />
                                 </div>
                                 <span className={`text-xl italic uppercase tracking-tighter font-light
@@ -104,12 +113,6 @@ function Sidebar({ isOpen, onClose }) {
                                 </span>
                             </a>
                         ))}
-
-                        {selectedTab !== "All" && (
-                            <div className="mt-10 text-center">
-                                <p className="text-gray-300 italic text-sm">Explore {selectedTab} Collections...</p>
-                            </div>
-                        )}
                     </div>
                 </div>
 

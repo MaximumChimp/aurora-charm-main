@@ -11,7 +11,7 @@ function SearchMobile({ isOpen, onClose }) {
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
-            setTimeout(() => inputRef.current?.focus(), 300);
+            setTimeout(() => inputRef.current);
         } else {
             document.body.style.overflow = 'unset';
             setSearchQuery(""); // Reset query on close

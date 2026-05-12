@@ -98,8 +98,8 @@ function Cart({ isOpen, onClose }) {
                         <span className="text-gray-400 uppercase tracking-widest text-[10px] font-bold">Subtotal</span>
                         <span className="text-xl font-black italic">₱400.00</span>
                     </div>
-                    <p className="text-[10px] text-gray-400 italic text-center">Shipping & taxes calculated at checkout</p>
-                    <button className="w-full bg-black text-white py-4 italic uppercase tracking-widest hover:bg-pink-500 transition-colors shadow-lg">
+                    <p className="text-[10px] text-gray-400 italic text-center">Shipping fee depends on your location.</p>
+                    <button className="w-full bg-black text-white py-4  uppercase tracking-widest hover:bg-pink-500 transition-colors shadow-lg">
                         Proceed to Checkout
                     </button>
                 </div>
