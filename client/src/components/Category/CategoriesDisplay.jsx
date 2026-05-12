@@ -187,7 +187,7 @@ function CategoriesDisplay() {
 
             {/* --- 4. DAILY FINDS SECTION --- */}
             <div className='w-full space-y-6 pb-6 sm:pt-2 md:pt-6'>
-                <div className='group relative overflow-hidden  rounded-sm py-2 px-4 cursor-pointer text-center shadow-md border-b-2 border-black'>
+                <div className='group relative overflow-hidden  rounded-xs py-2 px-4 cursor-pointer text-center shadow-md border-b-2 border-black'>
                     <span className='font-bold text-sm tracking-[0.2em] text-black block'>DAILY FINDS</span>
                 </div>
 

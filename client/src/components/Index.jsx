@@ -15,7 +15,7 @@ function Index() {
         "New Collection Coming Soon!",
         "Visit Our Facebook Page",
         "Check out Super Deals for ₱99 items!",
-        "Payment first basis"
+        "Payment First Basis"
     ];
 
     useEffect(() => {

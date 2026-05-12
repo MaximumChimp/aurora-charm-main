@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IoMdClose } from "react-icons/io";
-import Woman from '../../assets/images/Woman.png'; 
+import Woman from '../../assets/images/woman.png'; 
 
 function Sidebar({ isOpen, onClose }) {
     const [selectedTab, setSelectedTab] = useState("All");
