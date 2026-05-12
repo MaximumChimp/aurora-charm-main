@@ -3,17 +3,19 @@ import { IoCartOutline } from "react-icons/io5";
 import { HiOutlineUser } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 import CategoriesDisplay from "./Category/CategoriesDisplay";
-
+import Sidebar from "./Sidebar/Sidebar";
 function Index() {
     const [msgIndex, setMsgIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const Announcement = [
         "Delivery Every Weekends!",
         "New Collection Coming Soon!",
         "Visit Our Facebook Page",
-        "Check out Super Deals for ₱99 items!"
+        "Check out Super Deals for ₱99 items!",
+        "Payment first basis"
     ];
 
     useEffect(() => {
@@ -47,7 +49,10 @@ function Index() {
     return (
         /* CRITICAL: Ensure the root div doesn't have overflow-hidden that breaks sticky */
         <div className="relative min-h-screen w-full bg-white">
-            
+        <Sidebar 
+                isOpen={isSidebarOpen} 
+                onClose={() => setIsSidebarOpen(false)} 
+            />
             {/* --- HEADER SECTION --- */}
             {/* Added 'w-full' and made sure it's a direct child of the scrolling container */}
             <header className={`sticky top-0 z-[100] w-full transition-transform duration-500 ease-in-out shadow-sm ${
@@ -142,20 +147,27 @@ function Index() {
                     {/* Mobile View */}
                     <nav className="block sm:hidden p-4">
                         <div className="flex items-center justify-between">
-                            <IoMdMenu className="text-2xl text-white cursor-pointer"/>
+                            <IoMdMenu 
+                                className="text-2xl text-white cursor-pointer hover:text-pink-500 transition-colors" 
+                                onClick={() => setIsSidebarOpen(true)}
+                            />
                             <h1 className="text-3xl text-white font-['AuroraFont']">Aurora Charm</h1>
                             <div className="flex items-center gap-4">
-                                  <div className="relative cursor-pointer group">
+                                <IoIosSearch className="text-white text-2xl" />
+                                <div className="relative cursor-pointer group">
                                     <IoIosHeartEmpty className="text-2xl text-white group-hover:scale-110 transition-transform" />
                                     <span className="absolute -top-1 -right-1 bg-pink-500 text-[10px] text-white w-4 h-4 flex items-center justify-center rounded-full">0</span>
                                 </div>
-                                <IoIosSearch className="text-white text-2xl" />
                                 <IoCartOutline className="text-2xl text-white" />
                             </div>
                         </div>
+                        
                     </nav>
+                    
                 </div>
+              
             </header>
+            
 
             {/* --- MAIN CONTENT AREA --- */}
             <main className="relative z-10 w-full">
